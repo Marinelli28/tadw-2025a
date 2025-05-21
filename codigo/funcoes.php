@@ -62,7 +62,21 @@ function editarCliente($conexao, $nome, $cpf, $endereco, $idcliente) {
 
 function deletarProduto($conexao, $idproduto) {};
 
-function listarProdutos() {};
+function listarProdutos($conexao) {
+    $sql = "SELECT * FROM tb_produto";
+    $comando = mysqli_prepare($conexao, $sql);
+
+    mysqli_stmt_execute($comando);
+    $resultado = mysqli_stmt_get_result($comando);
+
+    $lista_Produtos = [];
+    while ($produto = mysqli_fetch_assoc($resultado)) {
+        $lista_produto[] = $produto;
+    }
+
+    mysqli_stmt_close($comando);
+    return $lista_produto;
+};
 
 function salvarProduto() {};
 
