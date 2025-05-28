@@ -78,7 +78,17 @@ function listarProdutos($conexao) {
     return $lista_produto;
 };
 
-function salvarProduto() {};
+function salvarProduto($conexao, $nome, $tipo, $preco_compra, $preco_venda, $margem_lucro, $quantidade) {
+    $sql = "INSERT INTO tb_produto (nome, tipo, preco_compra, preco_venda, margem_lucro, quantidade) VALUES (?, ?, ?, ?, ?, ?)";
+    $comando = mysqli_prepare($conexao, $sql);
+    
+    mysqli_stmt_bind_param($comando, 'ssdddd', $nome, $tipo, $preco_compra, $preco_venda, $margem_lucro, $quantidade);
+
+    $funcionou = mysqli_stmt_execute($comando);
+
+    mysqli_stmt_close($comando);
+    return $funcionou;
+};
 
 function editarProduto() {};
 
