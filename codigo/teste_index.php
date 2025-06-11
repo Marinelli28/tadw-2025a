@@ -1,20 +1,29 @@
 <?php
 
-require_once "../conexao.php";
-require_once "../funcoes.php";
+require_once "conexao.php";
+require_once "funcoes.php";
 
-$idcliente = $_GEt['idcliente'];
+$idcliente = $_GET['idcliente'];
 $valor_total = $_GET['valor_total'];
-$data_compra = $_GET['data_compra'];
-$idproduto = $_GET['idproduto'];
-$quatidade = $_GET['quantidade'];
+$data = $_GET['data'];
+$produto = $_GET['produto'];
+//$quatidade = $_GET['quantidade'];
 
-echo "idcliente: $idcliente";
-echo "<br>valor: $valor_total";
-echo "<br>data compra: $data_compra";
-echo "<br>idproduto";
-print_r($idproduto);
-echo "<br>quantidade: $quantidade";
+echo $idcliente;
+//echo $valor_total;
+//echo $data;
+echo "<pre>";
+print_r($produto);
+echo "</pre>";
+//echo $quantidade;
+
+echo "<pre>";
+print_r($data);
+echo "</pre>";
+
+echo "<pre>";
+print_r($valor_total);
+echo "</pre>"
 
 
 ?>

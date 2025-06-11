@@ -17,8 +17,8 @@
 
                 <?php
                 
-                require_once "./conexao.php";
-                require_once "./funcoes.php";
+                require_once "conexao.php";
+                require_once "funcoes.php";
                 
                 $lista_cliente = (listarClientes($conexao));
                 
@@ -34,16 +34,13 @@
             
             <br>
             Data: <br>
-            <input type="date"><br><br>
+            <input type="date" name="data"><br><br>
             <br><br>
             Valor: <br>
-            <input type="value">    
+            <input type="value" name="valor_total">    
             <br><br><br>
 
             <?php
-
-            require_once "conexao.php";
-            require_once "funcoes.php";
 
             $lista_produtos = listarProdutos($conexao);
             $arry = 0;
